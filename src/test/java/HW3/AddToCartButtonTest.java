@@ -21,8 +21,6 @@ public class AddToCartButtonTest {
     private Map<String, Object> vars;
     private JavascriptExecutor js;
     private Logger logger;
-    private final String TestSuccess = "TEST PASSED --->";
-    private final String TestFail = "TEST FAILED ---> ";
 
     @Before
     public void setUp() throws IOException {
@@ -40,30 +38,25 @@ public class AddToCartButtonTest {
 
     @Test
     public void AddToCart() throws InterruptedException {
-        try {
-            driver.manage().window().setSize(new Dimension(1052, 666));
-            driver.get("https://atid.store/");
-            HandelLogger("https://atid.store/", "Website");
+        driver.manage().window().setSize(new Dimension(1052, 666));
+        driver.get("https://atid.store/");
+        HandelLogger("https://atid.store/", "Website");
 
-            WebElement shop = driver.findElement(By.cssSelector("#menu-item-45 > a"));
-            shop.click();
-            HandelLogger("https://atid.store/store/", "Shop");
+        WebElement shop = driver.findElement(By.cssSelector("#menu-item-45 > a"));
+        shop.click();
+        HandelLogger("https://atid.store/store/", "Shop");
 
-            WebElement productContainer = driver.findElement(By.cssSelector("#main > div"));
-            WebElement product = productContainer.findElements(By.tagName("li")).get(0);
-            product.click();
-            HandelLogger("https://atid.store/product/anchor-bracelet/", "Product");
+        WebElement productContainer = driver.findElement(By.cssSelector("#main > div"));
+        WebElement product = productContainer.findElements(By.tagName("li")).get(0);
+        product.click();
+        HandelLogger("https://atid.store/product/anchor-bracelet/", "Product");
 
-            WebElement addProduct = driver.findElement(By.cssSelector("#product-160 > div.summary.entry-summary > form > button"));
-            addProduct.click();
-            logger.info(TestSuccess + " Product was successfully added to Cart");
+        WebElement addProduct = driver.findElement(By.cssSelector("#product-160 > div.summary.entry-summary > form > button"));
+        addProduct.click();
+        logger.info(Testing.TestSuccess + " Product was successfully added to Cart");
 
-            logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));
-        } catch (Exception e) {
-            logger.info("Test {%s} Failed".formatted(this.getClass().getCanonicalName()));
-        } finally {
-            js.executeScript("window.scrollTo(0,1500)");
-        }
+        logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));
+        js.executeScript("window.scrollTo(0,1500)");
     }
 
     private void HandelLogger(String expectedUrl, String checkType) throws InterruptedException {

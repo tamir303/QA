@@ -12,11 +12,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.logging.log4j.*;
 
-public class SearchForShoesProductTest {
+public class RemoveProductFromCartTest {
     private WebDriver driver;
     private Map<String, Object> vars;
     private JavascriptExecutor js;
@@ -33,25 +34,48 @@ public class SearchForShoesProductTest {
 
     @After
     public void tearDown() {
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
-    public void SearchProduct() throws InterruptedException {
+    public void RemoveProduct() throws InterruptedException {
         driver.manage().window().setSize(new Dimension(1052, 666));
         driver.get("https://atid.store/");
         HandelLogger("https://atid.store/", "Website");
 
+        // Click on the "Shop" menu item
         WebElement shop = driver.findElement(By.cssSelector("#menu-item-45 > a"));
         shop.click();
-        HandelLogger("https://atid.store/store/", "Shop");
+        HandelLogger("https://atid.store/store/", "Store");
 
-        WebElement textField = driver.findElement(By.cssSelector("#wc-block-search__input-1"));
-        textField.sendKeys("Shoe");
+        // Click on a product to add it to the cart
+        WebElement productContainer = driver.findElement(By.cssSelector(".products li:first-child a"));
+        productContainer.click();
+        HandelLogger("https://atid.store/product/anchor-bracelet/", "Product Add");
 
-        WebElement submit = driver.findElement(By.cssSelector("#block-7 > div > form > div > button"));
-        submit.click();
-        HandelLogger("https://atid.store/?s=Shoe&post_type=product", "Product(Shoe)");
+        // Add the product to the cart
+        WebElement product = driver.findElement(By.cssSelector("button[name='add-to-cart']"));
+        product.click();
+        logger.info(Testing.TestSuccess.toString("") + " Product Successfully added to cart");
+
+        // View Cart
+        driver.findElement(By.cssSelector("#main > div > div.woocommerce-notices-wrapper > div > a")).click();
+        HandelLogger("https://atid.store/cart-2/", "Cart");
+
+        // Verify that the product has been added to the cart
+        List<WebElement> cart = driver.findElements(By.cssSelector(".cart_item"));
+        if (cart.size() == 0)
+            throw new InterruptedException("Product wasn't added to cart");
+        logger.info(Testing.TestSuccess.toString("") + " Product successfully added to cart");
+
+        // Remove the product from the cart
+        driver.findElement(By.cssSelector(".cart_item .product-remove a")).click();
+
+        // Verify that the product has been removed from the cart
+        WebElement emptyCartMessage = driver.findElement(By.cssSelector(".cart-empty"));
+        if (!emptyCartMessage.getText().contains("Your cart is currently empty"))
+            throw new InterruptedException("Product wasn't removed from cart");
+        logger.info(Testing.TestSuccess.toString("") + " Product successfully removed to cart");
 
         logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));
         js.executeScript("window.scrollTo(0,1500)");
@@ -61,7 +85,7 @@ public class SearchForShoesProductTest {
         if (driver.getCurrentUrl().equals(expectedUrl))
             logger.info(Testing.TestSuccess.toString(checkType) + " Successfully accessed");
         else {
-            InterruptedException e = new InterruptedException("Failed to access");
+            InterruptedException e = new InterruptedException(" Failed to access");
             logger.info(Testing.TestFail.toString(checkType) + e.getLocalizedMessage());
             throw new InterruptedException();
         }
@@ -70,7 +94,7 @@ public class SearchForShoesProductTest {
     public static void main(String[] args) {
         JUnitCore junit = new JUnitCore();
         junit.addListener(new TextListener(System.out));
-        org.junit.runner.Result result = junit.run(SearchForShoesProductTest.class); // Replace "SampleTest" with the name of your class
+        org.junit.runner.Result result = junit.run(RemoveProductFromCartTest.class); // Replace "SampleTest" with the name of your class
 
         if (result.getFailureCount() > 0) {
             System.out.println("Test failed.");
