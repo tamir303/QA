@@ -1,0 +1,9 @@
+[INFO ] 2023-04-20 14:59:41.980 [main] AddToCartButtonTest - opening webiste
+[INFO ] 2023-04-20 15:01:39.800 [main] AddToCartButtonTest - opening webiste
+[INFO ] 2023-04-20 15:20:03.102 [main] AddToCartButtonTest - TEST FAILED --->java.lang.InterruptedException: Failed to access the website
+[INFO ] 2023-04-20 15:25:08.770 [main] AddToCartButtonTest - TEST FAILED --->Failed to access the website
+[INFO ] 2023-04-20 15:25:46.276 [main] AddToCartButtonTest - TEST FAILED --->Failed to access the website
+[INFO ] 2023-04-20 15:37:17.097 [main] AddToCartButtonTest - TEST PASSED --->Successfully accessed the Website
+[INFO ] 2023-04-20 15:37:17.654 [main] AddToCartButtonTest - TEST PASSED --->Successfully accessed the Shop
+[INFO ] 2023-04-20 15:37:18.247 [main] AddToCartButtonTest - TEST PASSED --->Successfully accessed the Product
+[INFO ] 2023-04-20 15:37:18.974 [main] AddToCartButtonTest - TEST PASSED --->Product was successfully added to cart
