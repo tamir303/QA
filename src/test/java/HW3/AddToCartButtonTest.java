@@ -40,32 +40,38 @@ public class AddToCartButtonTest {
 
     @Test
     public void AddToCart() throws InterruptedException {
-        driver.manage().window().setSize(new Dimension(1052, 666));
-        driver.get("https://atid.store/");
-        HandelLogger("https://atid.store/", "Website");
+        try {
+            driver.manage().window().setSize(new Dimension(1052, 666));
+            driver.get("https://atid.store/");
+            HandelLogger("https://atid.store/", "Website");
 
-        WebElement shop = driver.findElement(By.cssSelector("#menu-item-45 > a"));
-        shop.click();
-        HandelLogger("https://atid.store/store/", "Shop");
+            WebElement shop = driver.findElement(By.cssSelector("#menu-item-45 > a"));
+            shop.click();
+            HandelLogger("https://atid.store/store/", "Shop");
 
-        WebElement productContainer = driver.findElement(By.cssSelector("#main > div"));
-        WebElement product = productContainer.findElements(By.tagName("li")).get(0);
-        product.click();
-        HandelLogger("https://atid.store/product/anchor-bracelet/", "Product");
+            WebElement productContainer = driver.findElement(By.cssSelector("#main > div"));
+            WebElement product = productContainer.findElements(By.tagName("li")).get(0);
+            product.click();
+            HandelLogger("https://atid.store/product/anchor-bracelet/", "Product");
 
-        WebElement addProduct = driver.findElement(By.cssSelector("#product-160 > div.summary.entry-summary > form > button"));
-        addProduct.click();
-        logger.info(TestSuccess + "Product was successfully added to cart");
+            WebElement addProduct = driver.findElement(By.cssSelector("#product-160 > div.summary.entry-summary > form > button"));
+            addProduct.click();
+            logger.info(TestSuccess + " Product was successfully added to Cart");
 
-        js.executeScript("window.scrollTo(0,1500)");
+            logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));
+        } catch (Exception e) {
+            logger.info("Test {%s} Failed".formatted(this.getClass().getCanonicalName()));
+        } finally {
+            js.executeScript("window.scrollTo(0,1500)");
+        }
     }
 
     private void HandelLogger(String expectedUrl, String checkType) throws InterruptedException {
         if (driver.getCurrentUrl().equals(expectedUrl))
-            logger.info(TestSuccess + "Successfully accessed the " + checkType);
+            logger.info(Testing.TestSuccess.toString(checkType) + " Successfully accessed");
         else {
-            InterruptedException e = new InterruptedException("Failed to access the " + checkType);
-            logger.info(TestFail + e.getLocalizedMessage());
+            InterruptedException e = new InterruptedException("Failed to access");
+            logger.info(Testing.TestFail.toString("checkType") + e.getLocalizedMessage());
             throw new InterruptedException();
         }
     }

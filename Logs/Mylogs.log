@@ -7,3 +7,32 @@
 [INFO ] 2023-04-20 15:37:17.654 [main] AddToCartButtonTest - TEST PASSED --->Successfully accessed the Shop
 [INFO ] 2023-04-20 15:37:18.247 [main] AddToCartButtonTest - TEST PASSED --->Successfully accessed the Product
 [INFO ] 2023-04-20 15:37:18.974 [main] AddToCartButtonTest - TEST PASSED --->Product was successfully added to cart
+[INFO ] 2023-04-20 16:28:17.400 [main] AddToCartButtonTest - TEST PASSED --->Successfully accessed the Website
+[INFO ] 2023-04-20 16:28:19.585 [main] AddToCartButtonTest - TEST PASSED --->Successfully accessed the Shop
+[INFO ] 2023-04-20 16:28:21.451 [main] AddToCartButtonTest - TEST PASSED --->Successfully accessed the Product
+[INFO ] 2023-04-20 16:28:23.015 [main] AddToCartButtonTest - TEST PASSED --->Product was successfully added to Cart
+[INFO ] 2023-04-20 22:31:20.809 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:31:21.433 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:31:22.038 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:31:22.949 [main] AddToCartButtonTest - TEST PASSED --->Product was successfully added to Cart
+[INFO ] 2023-04-20 22:31:22.950 [main] AddToCartButtonTest - Test {} Completed Successfully
+[INFO ] 2023-04-20 22:31:55.270 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:31:55.750 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:31:56.363 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:31:57.114 [main] AddToCartButtonTest - TEST PASSED --->Product was successfully added to Cart
+[INFO ] 2023-04-20 22:31:57.114 [main] AddToCartButtonTest - Test {HW3.AddToCartButtonTest} Completed Successfully
+[INFO ] 2023-04-20 22:32:48.931 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:32:49.529 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:32:50.110 [main] AddToCartButtonTest - TEST PASSED ---> Successfully accessed
+[INFO ] 2023-04-20 22:32:50.851 [main] AddToCartButtonTest - TEST PASSED --->Product was successfully added to Cart
+[INFO ] 2023-04-20 22:32:50.852 [main] AddToCartButtonTest - Test {HW3.AddToCartButtonTest} Completed Successfully
+[INFO ] 2023-04-20 22:37:18.208 [main] AddToCartButtonTest - TEST PASSED ---> WebsiteSuccessfully accessed
+[INFO ] 2023-04-20 22:37:18.709 [main] AddToCartButtonTest - TEST PASSED ---> ShopSuccessfully accessed
+[INFO ] 2023-04-20 22:37:19.211 [main] AddToCartButtonTest - TEST PASSED ---> ProductSuccessfully accessed
+[INFO ] 2023-04-20 22:37:19.989 [main] AddToCartButtonTest - TEST PASSED --->Product was successfully added to Cart
+[INFO ] 2023-04-20 22:37:19.990 [main] AddToCartButtonTest - Test {HW3.AddToCartButtonTest} Completed Successfully
+[INFO ] 2023-04-20 22:38:30.185 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-04-20 22:38:30.752 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-04-20 22:38:31.484 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-04-20 22:38:32.275 [main] AddToCartButtonTest - TEST PASSED ---> Product was successfully added to Cart
+[INFO ] 2023-04-20 22:38:32.275 [main] AddToCartButtonTest - Test {HW3.AddToCartButtonTest} Completed Successfully
