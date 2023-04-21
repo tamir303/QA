@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.logging.log4j.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RemoveProductFromCartTest {
     private WebDriver driver;
@@ -56,7 +58,6 @@ public class RemoveProductFromCartTest {
         // Add the product to the cart
         WebElement product = driver.findElement(By.cssSelector("button[name='add-to-cart']"));
         product.click();
-        logger.info(Testing.TestSuccess.toString("") + " Product Successfully added to cart");
 
         // View Cart
         driver.findElement(By.cssSelector("#main > div > div.woocommerce-notices-wrapper > div > a")).click();
@@ -64,17 +65,25 @@ public class RemoveProductFromCartTest {
 
         // Verify that the product has been added to the cart
         List<WebElement> cart = driver.findElements(By.cssSelector(".cart_item"));
-        if (cart.size() == 0)
-            throw new InterruptedException("Product wasn't added to cart");
+        if (cart.size() == 0) {
+            Exception e = new InterruptedException("Product wasn't added to cart");
+            logger.info(Testing.TestFail.toString(e.getLocalizedMessage()));
+            throw new InterruptedException();
+        }
         logger.info(Testing.TestSuccess.toString("") + " Product successfully added to cart");
 
         // Remove the product from the cart
         driver.findElement(By.cssSelector(".cart_item .product-remove a")).click();
 
         // Verify that the product has been removed from the cart
-        WebElement emptyCartMessage = driver.findElement(By.cssSelector(".cart-empty"));
-        if (!emptyCartMessage.getText().contains("Your cart is currently empty"))
-            throw new InterruptedException("Product wasn't removed from cart");
+        WebElement messageElement = new WebDriverWait(driver, 10).
+                until(ExpectedConditions.visibilityOfElementLocated
+                        (By.xpath("//p[@class='cart-empty woocommerce-info']")));
+        if (!messageElement.getText().contains("Your cart is currently empty")) {
+            Exception e = new InterruptedException("Product wasn't removed from cart");
+            logger.info(Testing.TestFail.toString(e.getLocalizedMessage()));
+            throw new InterruptedException();
+        }
         logger.info(Testing.TestSuccess.toString("") + " Product successfully removed to cart");
 
         logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));

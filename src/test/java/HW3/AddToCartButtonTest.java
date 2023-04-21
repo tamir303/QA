@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.logging.log4j.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddToCartButtonTest {
     private WebDriver driver;
@@ -53,7 +55,21 @@ public class AddToCartButtonTest {
 
         WebElement addProduct = driver.findElement(By.cssSelector("#product-160 > div.summary.entry-summary > form > button"));
         addProduct.click();
-        logger.info(Testing.TestSuccess + " Product was successfully added to Cart");
+        logger.info(Testing.TestSuccess.toString(" Product was successfully added to Cart"));
+
+        // Wait for the cart icon to update
+        WebElement cartIcon = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart-contents")));
+        cartIcon.click();
+
+        // Check if the "anchor-bracelet" item is in the cart
+        WebElement cartItem = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart_item a[data-product_id='24']")));
+
+        // Print a message to the console indicating if the item was added to the cart
+        if (cartItem != null) {
+            System.out.println("The anchor-bracelet was added to the cart.");
+        } else {
+            System.out.println("The anchor-bracelet was not added to the cart.");
+        }
 
         logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));
         js.executeScript("window.scrollTo(0,1500)");
