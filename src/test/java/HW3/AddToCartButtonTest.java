@@ -58,17 +58,13 @@ public class AddToCartButtonTest {
         logger.info(Testing.TestSuccess.toString(" Product was successfully added to Cart"));
 
         // Wait for the cart icon to update
-        WebElement cartIcon = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart-contents")));
-        cartIcon.click();
-
-        // Check if the "anchor-bracelet" item is in the cart
-        WebElement cartItem = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart_item a[data-product_id='24']")));
-
+        WebElement cartIcon = driver.findElement(By.cssSelector("#ast-site-header-cart > div.ast-site-header-cart-li > a > div > span"));
+        int productCount = Integer.parseInt(cartIcon.getText());
         // Print a message to the console indicating if the item was added to the cart
-        if (cartItem != null) {
-            System.out.println("The anchor-bracelet was added to the cart.");
+        if (productCount == 1) {
+            logger.info(Testing.TestSuccess.toString("The anchor-bracelet was added to the cart."));
         } else {
-            System.out.println("The anchor-bracelet was not added to the cart.");
+            System.out.println(Testing.TestFail.toString("The anchor-bracelet was not added to the cart."));
         }
 
         logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));

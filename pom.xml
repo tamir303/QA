@@ -4,7 +4,7 @@
     <groupId>mb</groupId>
     <artifactId>mb2702</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Matan_Tests</name>
+    <name>Tamir_Tests</name>
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
