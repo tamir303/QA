@@ -187,3 +187,25 @@
 [INFO ] 2023-04-27 12:28:04.459 [main] AddToCartButtonTest - TEST PASSED --->  Product was successfully added to Cart
 [INFO ] 2023-04-27 12:28:04.497 [main] AddToCartButtonTest - TEST PASSED ---> The anchor-bracelet was added to the cart.
 [INFO ] 2023-04-27 12:28:04.498 [main] AddToCartButtonTest - Test {HW3.AddToCartButtonTest} Completed Successfully
+[INFO ] 2023-04-27 13:12:11.766 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-04-27 13:12:12.115 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-04-27 13:12:12.498 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-04-27 13:12:12.499 [main] AddToCartButtonTest - Test {HW3.FindHighestPriceProductTest} Completed Successfully
+[INFO ] 2023-04-27 13:13:40.287 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-04-27 13:13:40.636 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-04-27 13:13:41.009 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-04-27 13:13:41.010 [main] AddToCartButtonTest - Test {HW3.FindHighestPriceProductTest} Completed Successfully
+[INFO ] 2023-04-27 13:14:25.390 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-04-27 13:14:25.712 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-04-27 13:14:50.652 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-04-27 13:14:50.984 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-04-27 13:19:03.454 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-04-27 13:19:04.012 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-04-27 13:19:05.337 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-04-27 13:19:05.338 [main] AddToCartButtonTest - Test {HW3.FindHighestPriceProductTest} Completed Successfully
+[INFO ] 2023-04-27 13:19:31.515 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-04-27 13:19:31.845 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-04-27 13:20:27.674 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-04-27 13:20:27.966 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-04-27 13:20:28.655 [main] AddToCartButtonTest - TEST PASSED ---> Highest Price Product Successfully accessed
+[INFO ] 2023-04-27 13:20:28.655 [main] AddToCartButtonTest - Test {HW3.FindHighestPriceProductTest} Completed Successfully
