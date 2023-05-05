@@ -32,7 +32,7 @@ public class AbstractTest {
 
     @Before
     public void setUp() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\noamr\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\tamir\\IdeaProjects\\chromedriver.exe");
         driver = new ChromeDriver();
         htmlCsRunner = new HtmlCsRunner(driver);
         js = (JavascriptExecutor) driver;
@@ -57,7 +57,7 @@ public class AbstractTest {
     @After
     public void tearDown() throws TemplateException, IOException, URISyntaxException {
         htmlCsRunner.execute();
-        driver.quit();
+        //driver.quit();
         htmlCsRunner.generateHtmlReport();
     }
 }
