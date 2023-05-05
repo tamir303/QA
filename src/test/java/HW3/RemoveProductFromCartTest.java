@@ -31,31 +31,10 @@ public class RemoveProductFromCartTest extends AbstractTest {
 
         // View Cart
         productPage.setUrl(productUrl);
-        driver.findElement(By.className("single_add_to_cart_button")).click();
-        HandelLogger("https://atid.store/cart-2/", "Cart");
-
-        // Verify that the product has been added to the cart
-        List<WebElement> cart = driver.findElements(By.cssSelector(".cart_item"));
-        if (cart.size() == 0) {
-            Exception e = new InterruptedException("Product wasn't added to cart");
-            logger.info(Testing.TestFail.toString(e.getLocalizedMessage()));
-            throw new InterruptedException();
-        }
-        logger.info(Testing.TestSuccess.toString("") + " Product successfully added to cart");
+        productPage.addProduct();
 
         // Remove the product from the cart
-        driver.findElement(By.cssSelector(".cart_item .product-remove a")).click();
-
-        // Verify that the product has been removed from the cart
-        WebElement messageElement = new WebDriverWait(driver, 10).
-                until(ExpectedConditions.visibilityOfElementLocated
-                        (By.xpath("//p[@class='cart-empty woocommerce-info']")));
-        if (!messageElement.getText().contains("Your cart is currently empty")) {
-            Exception e = new InterruptedException("Product wasn't removed from cart");
-            logger.info(Testing.TestFail.toString(e.getLocalizedMessage()));
-            throw new InterruptedException();
-        }
-        logger.info(Testing.TestSuccess.toString("") + " Product successfully removed to cart");
+        productPage.removeProduct();
 
         logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));
         js.executeScript("window.scrollTo(0,1500)");
