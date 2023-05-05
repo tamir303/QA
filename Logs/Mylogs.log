@@ -400,3 +400,23 @@
 [INFO ] 2023-05-05 11:22:34.070 [main] AddToCartButtonTest - TEST PASSED --->  Product was successfully added to Cart
 [INFO ] 2023-05-05 11:22:34.108 [main] AddToCartButtonTest - TEST PASSED ---> ATID Black Shoes was added to the cart.
 [INFO ] 2023-05-05 11:22:34.109 [main] AddToCartButtonTest - Test {HW3.AddToCartButtonTest} Completed Successfully
+[INFO ] 2023-05-05 11:40:00.177 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:40:00.600 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:40:00.972 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:40:59.684 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:41:00.150 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:41:00.498 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:45:18.038 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:45:18.462 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:45:18.845 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:45:19.637 [main] AddToCartButtonTest - TEST PASSED ---> Cart Successfully accessed
+[INFO ] 2023-05-05 11:45:19.648 [main] AddToCartButtonTest - TEST FAILED ---> Product wasn't added to cart
+[INFO ] 2023-05-05 11:48:59.845 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:49:00.258 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:49:00.648 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:49:01.354 [main] AddToCartButtonTest - TEST PASSED ---> Cart Successfully accessed
+[INFO ] 2023-05-05 11:49:01.364 [main] AddToCartButtonTest - TEST FAILED ---> Product wasn't added to cart
+[INFO ] 2023-05-05 11:49:40.562 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:49:41.037 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:49:41.437 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:49:42.118 [main] AddToCartButtonTest - TEST FAILED ---> Cart Failed to access
