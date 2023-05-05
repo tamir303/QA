@@ -2,6 +2,7 @@ package HW3.pages;
 
 import HW3.Testing;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
@@ -26,5 +27,10 @@ public class HomePage extends AbstractPageElement {
             logger.info(Testing.TestFail.toString("checkType") + e.getLocalizedMessage());
             throw new InterruptedException();
         }
+    }
+
+    public void openPage(String option) throws InterruptedException {
+        driver.findElement(By.id(option)).click();
+        HandleLogger("https://atid.store/store/", "Shop");
     }
 }

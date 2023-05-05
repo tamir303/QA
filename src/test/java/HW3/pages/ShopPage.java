@@ -14,18 +14,25 @@ public class ShopPage extends AbstractPageElement {
         super(driver, url, logger);
     }
 
-    public void openShopPage() throws InterruptedException {
-        driver.findElement(By.cssSelector("#menu-item-45 > a")).click();
+    public void openShopPage(String menuItem) throws InterruptedException {
+        driver.findElement(By.cssSelector("#" + menuItem + " > a")).click();
         HandleLogger("https://atid.store/store/", "Shop");
     }
 
-    public List<WebElement> getProductContainer() {
-        return driver.findElement(By.cssSelector("#main > div")).findElements(By.tagName("li"));
+    private List<WebElement> getProductContainer() {
+         return driver.findElements(By.xpath("//*[@id='main']/div/ul/li"));
     }
 
-    public String getFirstItem() throws InterruptedException {
-        this.getProductContainer().get(0).click();
-        HandleLogger("https://atid.store/product/anchor-bracelet/", "Product");
+    private String getProductName(String text)
+    {
+        return text.split("\n")[0];
+    }
+
+    public String getToItembyXpath(int XpathIndex) throws InterruptedException {
+        List<WebElement> webElements = this.getProductContainer();
+        if(XpathIndex < 0 || XpathIndex > webElements.size() ) throw new InterruptedException();
+        webElements.get(XpathIndex).click();
+        HandleLogger(driver.getCurrentUrl(), "Product");
         return driver.getCurrentUrl();
     }
 

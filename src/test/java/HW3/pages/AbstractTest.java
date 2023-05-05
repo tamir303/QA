@@ -3,12 +3,16 @@ package HW3.pages;
 import HW3.AddToCartButtonTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +28,7 @@ public class AbstractTest {
 
     @Before
     public void setUp() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\97252\\Dropbox\\PC\\" + "\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\noamr\\Downloads\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
@@ -33,7 +37,18 @@ public class AbstractTest {
         shopPage = new ShopPage(this.driver, "https://atid.store/store/", this.logger);
         productPage = new ProductPage(this.driver, null, this.logger);
     }
-
+    public JSONObject readJSON(String path) {
+        try {
+            JSONParser jsonParser = new JSONParser();
+            FileReader reader;
+            reader = new FileReader(path);
+            // Read JSON file and return as JSONArray
+            return (JSONObject)jsonParser.parse(reader);
+        } catch (ParseException | IOException e) {
+            logger.error("Reading JSON Failed: %s".formatted(e.getMessage()));
+            return null;
+        }
+    }
     @After
     public void tearDown() {
         driver.quit();
