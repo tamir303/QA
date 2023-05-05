@@ -43,6 +43,13 @@ public class ShopPage extends AbstractPageElement {
         logger.info(Testing.TestSuccess.toString("Sorted All Products By Price"));
     }
 
+    public void searchProductByName(String product) throws InterruptedException {
+        WebElement textField = driver.findElement(By.cssSelector("#wc-block-search__input-1"));
+        textField.sendKeys(product);
+        driver.findElement(By.cssSelector("#block-7 > div > form > div > button")).click();
+        HandleLogger("https://atid.store/?s="+product+"&post_type=product", "Product("+product+")");
+    }
+
     @Override
     protected void HandleLogger(String expectedUrl, String checkType) throws InterruptedException {
         if (driver.getCurrentUrl().equals(expectedUrl))

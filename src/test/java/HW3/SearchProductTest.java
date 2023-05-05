@@ -16,33 +16,19 @@ public class SearchProductTest extends AbstractTest {
     @Test
     public void SearchProduct() throws InterruptedException {
         driver.manage().window().setSize(new Dimension(1052, 666));
-        driver.get("https://atid.store/");
-        HandelLogger("https://atid.store/", "Website");
         JSONObject config =(JSONObject)this.base_config.get("SearchTest");
-        String menuOption = (String) config.get("MenuOptionID");
-        driver.findElement(By.id(menuOption)).click();
-        HandelLogger("https://atid.store/store/", "Shop");
-        String searchValue = (String) config.get("searchValue");
-        WebElement textField = driver.findElement(By.cssSelector("#wc-block-search__input-1"));
-        textField.sendKeys(searchValue);
+        homePage.openHomePage();
 
-        WebElement submit = driver.findElement(By.cssSelector("#block-7 > div > form > div > button"));
-        submit.click();
-        HandelLogger("https://atid.store/?s="+searchValue+"&post_type=product", "Product("+searchValue+")");
+        String menuOption = (String) config.get("MenuOptionID");
+        homePage.openPage(menuOption);
+
+        String searchValue = (String) config.get("searchValue");
+        shopPage.searchProductByName(searchValue);
 
         logger.info("Test {%s} Completed Successfully".formatted(this.getClass().getCanonicalName()));
         js.executeScript("window.scrollTo(0,1500)");
     }
 
-    private void HandelLogger(String expectedUrl, String checkType) throws InterruptedException {
-        if (driver.getCurrentUrl().equals(expectedUrl))
-            logger.info(Testing.TestSuccess.toString(checkType) + " Successfully accessed");
-        else {
-            InterruptedException e = new InterruptedException("Failed to access");
-            logger.info(Testing.TestFail.toString(checkType) + e.getLocalizedMessage());
-            throw new InterruptedException();
-        }
-    }
 
     public static void main(String[] args) {
         JUnitCore junit = new JUnitCore();
