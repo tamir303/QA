@@ -17,7 +17,8 @@ public class ProductPage extends AbstractPageElement{
         WebElement addToCartButton = element.findElement(By.name("add-to-cart"));
         addToCartButton.click();
         logger.info(Testing.TestSuccess.toString(" Product was successfully added to Cart"));
-        this.productName = driver.findElement(By.cssSelector("#product-160 > div.summary.entry-summary > h1")).getText();
+        this.productName = driver.findElement(By.className("product_title")).getText();
+
         checkProductInCart();
     }
 

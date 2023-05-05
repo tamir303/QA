@@ -378,3 +378,25 @@
 [INFO ] 2023-05-05 11:07:27.839 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
 [INFO ] 2023-05-05 11:07:28.211 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
 [INFO ] 2023-05-05 11:07:46.677 [main] AddToCartButtonTest - TEST PASSED --->  Product was successfully added to Cart
+[INFO ] 2023-05-05 11:08:35.012 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:08:35.450 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:08:35.777 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:15:16.721 [main] AddToCartButtonTest - TEST PASSED --->  Product was successfully added to Cart
+[INFO ] 2023-05-05 11:15:25.284 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:15:25.632 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:15:26.009 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:15:27.282 [main] AddToCartButtonTest - TEST PASSED --->  Product was successfully added to Cart
+[INFO ] 2023-05-05 11:17:57.691 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:17:58.016 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:17:58.352 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:17:58.943 [main] AddToCartButtonTest - TEST PASSED --->  Product was successfully added to Cart
+[INFO ] 2023-05-05 11:21:55.972 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:21:56.292 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:21:56.651 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:21:57.287 [main] AddToCartButtonTest - TEST PASSED --->  Product was successfully added to Cart
+[INFO ] 2023-05-05 11:22:32.721 [main] AddToCartButtonTest - TEST PASSED ---> Website Successfully accessed
+[INFO ] 2023-05-05 11:22:33.077 [main] AddToCartButtonTest - TEST PASSED ---> Shop Successfully accessed
+[INFO ] 2023-05-05 11:22:33.484 [main] AddToCartButtonTest - TEST PASSED ---> Product Successfully accessed
+[INFO ] 2023-05-05 11:22:34.070 [main] AddToCartButtonTest - TEST PASSED --->  Product was successfully added to Cart
+[INFO ] 2023-05-05 11:22:34.108 [main] AddToCartButtonTest - TEST PASSED ---> ATID Black Shoes was added to the cart.
+[INFO ] 2023-05-05 11:22:34.109 [main] AddToCartButtonTest - Test {HW3.AddToCartButtonTest} Completed Successfully
