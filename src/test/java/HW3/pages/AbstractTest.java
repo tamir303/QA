@@ -37,7 +37,7 @@ public class AbstractTest {
         htmlCsRunner = new HtmlCsRunner(driver);
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
-        logger = LogManager.getLogger(AddToCartButtonTest.class);
+        logger = LogManager.getLogger(this.getClass());
         homePage = new HomePage(this.driver, "https://atid.store/", this.logger);
         shopPage = new ShopPage(this.driver, "https://atid.store/store/", this.logger);
         productPage = new ProductPage(this.driver, null, this.logger);
