@@ -1,6 +1,8 @@
 package HW3.pages;
 
 import HW3.AddToCartButtonTest;
+import freemarker.template.TemplateException;
+import io.github.sridharbandi.HtmlCsRunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
@@ -14,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,6 +24,7 @@ public class AbstractTest {
     protected WebDriver driver;
     protected Map<String, Object> vars;
     protected JavascriptExecutor js;
+    protected static HtmlCsRunner htmlCsRunner;
     protected Logger logger;
     protected HomePage homePage;
     protected ShopPage shopPage;
@@ -30,6 +34,7 @@ public class AbstractTest {
     public void setUp() throws IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\noamr\\Downloads\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
+        htmlCsRunner = new HtmlCsRunner(driver);
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
         logger = LogManager.getLogger(AddToCartButtonTest.class);
@@ -50,7 +55,9 @@ public class AbstractTest {
         }
     }
     @After
-    public void tearDown() {
+    public void tearDown() throws TemplateException, IOException, URISyntaxException {
+        htmlCsRunner.execute();
         driver.quit();
+        htmlCsRunner.generateHtmlReport();
     }
 }
