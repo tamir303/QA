@@ -1,0 +1,22 @@
+{
+  "driverPath": "C:\\Users\\noamr\\Downloads\\chromedriver_win32\\chromedriver.exe",
+  "AddToCartTest" :
+    {
+      "MenuOptionID": "menu-item-45",
+      "XpathIndex": 1
+    },
+  "FindHighestPriceTest":
+    {
+      "MenuOptionID": "menu-item-45"
+    },
+  "RemoveFromCartTest":
+    {
+      "MenuOptionID": "menu-item-45",
+      "XpathIndex": 1
+    },
+  "SearchTest":
+    {
+      "MenuOptionID": "menu-item-45",
+      "searchValue": "Shoe"
+    }
+}

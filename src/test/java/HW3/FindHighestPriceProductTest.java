@@ -13,7 +13,7 @@ public class FindHighestPriceProductTest extends AbstractTest {
     @Test
     public void FindHighestPrice() throws InterruptedException {
         homePage.openHomePage();
-        JSONObject config =readJSON("src/test/java/HW3/jsons/searchJSON.json");
+        JSONObject config =(JSONObject) this.base_config.get("FindHighestPriceTest");
         String menuOption = (String) config.get("MenuOptionID");
         shopPage.openShopPage(menuOption);
         shopPage.sortByHighToLow();

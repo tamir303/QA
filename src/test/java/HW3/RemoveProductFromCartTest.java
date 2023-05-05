@@ -7,16 +7,13 @@ import org.json.simple.JSONObject;
 import org.junit.Test;
 import org.junit.internal.TextListener;
 import org.junit.runner.JUnitCore;
-import org.openqa.selenium.*;
-import java.util.List;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RemoveProductFromCartTest extends AbstractTest {
 
     @Test
     public void RemoveProduct() throws InterruptedException {
-        JSONObject config = readJSON("src/test/java/HW3/jsons/AddToCartJSON.json");
+
+        JSONObject config = (JSONObject)this.base_config.get("RemoveFromCartTest");
 
         // Open home page
         homePage.openHomePage();

@@ -1,6 +1,5 @@
 package HW3.pages;
 
-import HW3.AddToCartButtonTest;
 import freemarker.template.TemplateException;
 import io.github.sridharbandi.HtmlCsRunner;
 import org.apache.logging.log4j.LogManager;
@@ -29,15 +28,18 @@ public class AbstractTest {
     protected HomePage homePage;
     protected ShopPage shopPage;
     protected ProductPage productPage;
+    protected JSONObject base_config;
 
     @Before
     public void setUp() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\tamir\\IdeaProjects\\chromedriver.exe");
+        logger = LogManager.getLogger(this.getClass());
+        base_config =readJSON("src/test/java/HW3/jsons/config.json");
+        String driver_path = (String) base_config.get("driverPath");
+        System.setProperty("webdriver.chrome.driver", driver_path);
         driver = new ChromeDriver();
         htmlCsRunner = new HtmlCsRunner(driver);
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
-        logger = LogManager.getLogger(this.getClass());
         homePage = new HomePage(this.driver, "https://atid.store/", this.logger);
         shopPage = new ShopPage(this.driver, "https://atid.store/store/", this.logger);
         productPage = new ProductPage(this.driver, null, this.logger);
@@ -57,7 +59,7 @@ public class AbstractTest {
     @After
     public void tearDown() throws TemplateException, IOException, URISyntaxException {
         htmlCsRunner.execute();
-        //driver.quit();
+        driver.quit();
         htmlCsRunner.generateHtmlReport();
     }
 }

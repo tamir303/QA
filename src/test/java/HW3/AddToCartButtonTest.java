@@ -12,7 +12,7 @@ public class AddToCartButtonTest extends AbstractTest {
     @Test
     public void AddToCart() throws InterruptedException {
         homePage.openHomePage();
-        JSONObject config =readJSON("src/test/java/HW3/jsons/AddToCartJSON.json");
+        JSONObject config = (JSONObject)this.base_config.get("AddToCartTest");
         String menuOption = (String) config.get("MenuOptionID");
         homePage.openPage(menuOption);
         int XpathIndex = ((Long) config.get("XpathIndex")).intValue();

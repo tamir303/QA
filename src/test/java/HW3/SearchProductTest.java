@@ -11,14 +11,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 
-public class SearchForShoesProductTest extends AbstractTest {
+public class SearchProductTest extends AbstractTest {
 
     @Test
     public void SearchProduct() throws InterruptedException {
         driver.manage().window().setSize(new Dimension(1052, 666));
         driver.get("https://atid.store/");
         HandelLogger("https://atid.store/", "Website");
-        JSONObject config =readJSON("src/test/java/HW3/jsons/searchJSON.json");
+        JSONObject config =(JSONObject)this.base_config.get("SearchTest");
         String menuOption = (String) config.get("MenuOptionID");
         driver.findElement(By.id(menuOption)).click();
         HandelLogger("https://atid.store/store/", "Shop");
@@ -47,7 +47,7 @@ public class SearchForShoesProductTest extends AbstractTest {
     public static void main(String[] args) {
         JUnitCore junit = new JUnitCore();
         junit.addListener(new TextListener(System.out));
-        org.junit.runner.Result result = junit.run(SearchForShoesProductTest.class); // Replace "SampleTest" with the name of your class
+        org.junit.runner.Result result = junit.run(SearchProductTest.class); // Replace "SampleTest" with the name of your class
 
         if (result.getFailureCount() > 0) {
             System.out.println("Test failed.");
